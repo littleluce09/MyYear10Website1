@@ -1,3 +1,6 @@
+/* Add google fonts here*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 /* A simple css reset */
 body,
 html {
@@ -7,7 +10,10 @@ html {
     /* The Font Family- Really important!! */
     font-family: Arial, sans-serif;
     box-sizing: border-box;
+    background-position: center; /* Center the image */
+    background-color: #471b19;
 }
+
 
 /* reset for images to ensure they ar 100% of the parent container width */
 img {
@@ -16,7 +22,7 @@ img {
 
 /* The hero section styling- use your OWN Hero Image URL here */
 .hero {
-    background-image: url('images/techquitybanner-1130x160.png');
+    background-image: url('images/bgimage.png');
     height: 25vh;
     background-size: cover;
     background-position: center;
@@ -29,21 +35,64 @@ img {
 }
 
 /* BIG text styling for the hero section text */
-.hero-text {
-    font-size: 4em;
-    font-weight: bold;
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 40px 0;
+  padding-bottom: 0;
 }
 
+.title {
+  font-size: 100px;
+  color: white;
+  margin: 0;
+  font-family: 'Engagement', cursive;
+  letter-spacing: 20px;
+}
+
+.name {
+  position: absolute;
+  top: 40px;           /* adjust height */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 50px;
+  letter-spacing: 10px;   /* THIS makes it longer */  
+  color: white;
+  z-index: 2;
+}
 /* nice big font on a banner style background */
 .topic-title{
     color: white;
     font-size: 2em;
-    padding: 0.1em 3em;
-    background-color: rgb(71, 71, 71);
+    padding: 0px;
+    padding-bottom: 15px;
+    background-color: black;
 }
 
-/* Three column grid with a nice big gap */
+/* FOUR column grid with a nice big gap */
 .topic-content{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    /* bring the whole section in off the sides of the page */
+    width: 90%;
+    /* top margin of 3em and center right/left */
+    margin: 3em auto;
+}
+
+.topic-intro{
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 0;
+    padding-bottom: 30px;
+    background-color: gray;
+}
+
+.topic-index{
+    text-align: center;
+}
+/* Three column grid with a nice big gap */
+.topic-home{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 6em;
@@ -55,11 +104,10 @@ img {
 
 /* Styling for the individual topic cards rounded edges background color and a drop shadow */
 .topic-card{
-    background-color: rgb(71, 71, 71);
+    background-color: #4d1512;
     color: white;
-    padding: 1em;
-    border-radius: 0.5em;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    padding: 3em;
+    border-radius: 1em;
 }
 
 /* Styling for the topic card titles */
@@ -77,4 +125,50 @@ img {
     color: white;
     text-align: right;
     padding: 3em 3em;
+}
+
+.headinglink1{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    background-color: black;
+    padding: 20px;
+    margin: 0;
+    padding-left: 31px;
+    padding-right: 31px;
+}
+
+.headinglink1:hover{
+    background-color: gray;
+}
+
+.headinglink1:active{
+    background-color: gray;
+}
+
+
+/* Styling for the individual topic cards rounded edges background color and a drop shadow */
+.topic-card{
+    background-color:#4d1512;
+    color: white;
+/*    padding: 1em;
+    border-radius: 0.5em;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2); */
+    margin: 0;
+}
+
+/* Styling for the topic card titles */
+.topic-card-text1{
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    /* center align text */
+    text-align: center;
+}
+
+.topic-card{
+    background-image: url('https://png.pngtree.com/png-vector/20250321/ourmid/pngtree-luxury-gold-square-frame-clipart-illustration-png-image_15800623.png');
+    background-size: cover;
+    background-position: center;
+    background-size: 125%;
+    background-repeat: no-repeat;
 }
