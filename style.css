@@ -15,6 +15,10 @@ html {
 }
 
 
+a, h2, p{
+    font-family:'Times New Roman', Times, serif;
+}
+
 /* reset for images to ensure they ar 100% of the parent container width */
 img {
     width: 100%;
@@ -89,22 +93,36 @@ img {
 }
 
 .topic-index{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 50px;
+    background-color: rgb(41, 36, 36);
+
+}
+.topic-index-1{
     text-align: center;
 }
+
+.topic-index, .topic-index-1{
+    color: rgb(255, 255, 255);
+}
+
+
 /* Three column grid with a nice big gap */
 .topic-home{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 6em;
+    gap: 7em;
     /* bring the whole section in off the sides of the page */
     width: 70%;
     /* top margin of 3em and center right/left */
     margin: 3em auto;
+    margin-top: 0;
 }
 
 /* Styling for the individual topic cards rounded edges background color and a drop shadow */
 .topic-card{
-    background-color: #4d1512;
+    background-color: #471b19;
     color: white;
     padding: 3em;
     border-radius: 1em;
@@ -130,12 +148,12 @@ img {
 .headinglink1{
     text-decoration: none;
     color: white;
-    font-size: 15px;
+    font-size: 22px;
     background-color: black;
-    padding: 20px;
+    padding: 10px;
     margin: 0;
-    padding-left: 31px;
-    padding-right: 31px;
+    padding-left: 37px;
+    padding-right: 37px;
 }
 
 .headinglink1:hover{
@@ -149,7 +167,8 @@ img {
 
 /* Styling for the individual topic cards rounded edges background color and a drop shadow */
 .topic-card{
-    background-color:#4d1512;
+    background-color: #471b19;
+;
     color: white;
 /*    padding: 1em;
     border-radius: 0.5em;
@@ -166,9 +185,52 @@ img {
 }
 
 .topic-card{
-    background-image: url('https://png.pngtree.com/png-vector/20250321/ourmid/pngtree-luxury-gold-square-frame-clipart-illustration-png-image_15800623.png');
-    background-size: cover;
-    background-position: center;
-    background-size: 125%;
-    background-repeat: no-repeat;
+    position: relative; /* 1. Creates a positioning context for the overlay */
+    display: inline-block; /* Optional: Shrinks the div wrapper to the size of the image */
+    overflow: hidden; /* Optional: Keeps everything neatly contained */
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 350px;
+  margin-top: 150px;
+  margin-bottom: 100px;
+  position:relative;
+  z-index: 1; /* 2. Keeps the inner image on a lower layer */
+  object-fit: cover;
+}
+
+/* This replaces your traditional background-image property */
+.topic-card::after {
+  content: ""; /* Required for pseudo-elements to render */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* 3. Add your background image properties here */
+  background-image: url('https://png.pngtree.com/png-vector/20250321/ourmid/pngtree-luxury-gold-square-frame-clipart-illustration-png-image_15800623.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 125%;
+  /* 4. Force this background layer above the inner image */
+  z-index: 2; 
+}
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+    padding: 10px;
+    width: 100%;
+    max-width: 1000px; /* Slightly wider than your 960px game window */
+}
+
+.game-container iframe {
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 100%; /* Keeps it responsive if the browser window shrinks */
 }
